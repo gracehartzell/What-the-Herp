@@ -25,7 +25,7 @@ Populated map, search results including images, specific information, meetups an
 
 
 ## What web API(s) will it use?
-The Herp Mapper API, possibly Flickr and/or Google for image searches, Google/Facebook/Meetup for locating nearby herpetology groups/events, 
+The VertNet API, Herp Mapper API, possibly Flickr and/or Google for image searches, Google/Facebook/Meetup for locating nearby herpetology groups/events, 
 
 ## What technologies do you plan to use?
 I'd definitely like to use React, Anime, Firebase and Buzz. More will arise once I start fleshing out everything.
