@@ -1,3 +1,47 @@
+* {
+  /* background:url("albinoAl.jpg"); */
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+header {
+  background: #C1CFC7;
+  /* padding: 10px; */
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px;
+  text-align: center;
+}
+
+.container{
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  background-color: #C1CFC7;
+}
+
+ul{
+  margin: 0;
+  padding:0;
+}
+/* 
+.showcase {
+  min-height: 400px;
+  background:url("albinoAl.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+} */
+
+.headerBar {
+  background-color: #C1CFC7;
+  width: 100%;
+  height: 90px;
+}
+
+/* SEARCH BAR STYLING */
 .container-3{
     width: 300px;
     vertical-align: middle;
