@@ -14,62 +14,55 @@
     crossorigin=""/>
     <link href="//www.idigbio.org/portal/css/idbmap.css" rel="stylesheet" type="text/css">
     <script src="//www.idigbio.org/portal/js/idbmap.js"></script>
-    <style>
-        #mapid {
-          min-height: 400px;
-          margin-top: 70px;
-          margin-left: 20px;
-          margin-right: 20px;
-        }
-    </style>
-
     <title>Map</title>
 </head>
 
 <body>
-    <div class="navbar">
-        
-            <div class="header">
-                <h1><a id="h1" href="index.html">What the Herp?</a></h1>
+
+    <div class="nav">
+    
+        <h1 id="navh1"><a href="index.html">What the Herp?</a></h1>
+        <div id="options">
+            <!-- <form>
+                <input type="text" name="searchInput" id="searchInput" placeholder="Search a Herp"/>
+                <button type="button" name="searchButton" id="searchButton"><i class="fa fa-search fa-2x"></i></button>
+            </form> -->
+            <div id="open-menu">
+                <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+                <ul class="subnav">
+                    <li><a class="subnav-link" href="about.html">About</a></li>
+                    <li><a class="subnav-link" href="map.html">Map</a></li>
+                    <li><a class="subnav-link" href="learn.html">Learn</a></li>
+                    <li><a class="subnav-link" href="social.html">Social</a></li>
+                    <li><a class="subnav-link" href="help.html">Help</a></li>
+                </ul>
             </div>
-        
-            <div class="dropdown">
-            <button class="dropbtn">
-                <i class="fa fa-bars fa-2x"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="about.html">About</a>
-                <a href="learn.html">Learn</a>
-                <a href="map.html">Map</a>
-                <a href="social.html">Social</a>
-                <a href="help.html">Help</a>
-            </div>
-        </div> 
-        <form>
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-        
         </div>
+    </div>
 
-        <div id="mapid">
-                <script>
-                    navigator.geolocation.getCurrentPosition(function(location) {
-                        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+    <div id="mapid">
+        <script>
+            navigator.geolocation.getCurrentPosition(function(location) {
+                var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
 
-                        var mymap = L.map('mapid').setView(latlng, 13)
-                            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
-                                maxZoom: 18,
-                                id: 'mapbox.streets',
-                                accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
-                            }).addTo(mymap);
+                var mymap = L.map('mapid').setView(latlng, 13)
+                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox.streets',
+                        accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
+                    }).addTo(mymap);
 
-                        var marker = L.marker(latlng).addTo(mymap);
-                    });
-                </script>
-                    </div>
-<!-- 
-        https://api.gbif.org/v2/map/occurrence/density/{z}/{x}/{y}@1x.png?style=purpleYellow.point -->
+                var marker = L.marker(latlng).addTo(mymap);
+            });
+        </script>
+    </div>
+
+    <div class="bottom">
+        <i class="fa fa-exclamation-circle fa-3x"></i>
+        <h3>The map is currently out in the field, please check back later!</h3>
+    </div>
+
+
 </body>
 </html>
