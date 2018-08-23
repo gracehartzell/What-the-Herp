@@ -1,2 +1,3 @@
-# q1-herpScout
+# What the Herp?
+
 Quarter one project for Galvanize
