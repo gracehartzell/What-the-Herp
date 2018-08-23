@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer src="app2.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script defer src="/js/learn.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Learn</title>
 </head>
@@ -17,7 +17,7 @@
         
         <div id="options">
             <form>
-                <input type="text" name="searchInput" id="searchInput" placeholder="Search a Herp"/>
+                <input type="text" name="searchInput" id="searchInput" placeholder="Search a Herp" onfocus="this.value=''"/>
                 <button type="button" name="searchButton" id="searchButton"><i class="fa fa-search fa-2x"></i></button>
             </form>
             <div id="open-menu">
@@ -36,8 +36,7 @@
 
     <h1 class="main">Search Results</h1>
     
-    <div class="cards">
-    </div>
+    <div class="cards"></div>
 
 </body>
 </html>
