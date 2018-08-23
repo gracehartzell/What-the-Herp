@@ -7,6 +7,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
             id: 'mapbox.streets',
             accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
         }).addTo(mymap);
+    
     let marker = L.marker(latlng).addTo(mymap);
     
     mymap.on('click', locationClick)
