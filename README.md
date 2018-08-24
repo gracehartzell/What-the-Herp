@@ -41,4 +41,10 @@ Goals for future: Enable text upon storing data point and custom markers.
 ![](mapSave.gif)
 
 
+## Social
+After many a struggle with Meetup's API, I made the decision to add a Google Custom Search Engine and customize it through their website. I wasn't able to get it to base the search off of the user's location, so that is a future goal of mine. 
+
+## About and Help
+Both of these pages got put on the backburner, the latter more than I would've liked it to. Both of these are meant to be informative pages and aren't meant to have any bells or whistles. I might go back and add extra features in the future. 
+
 
