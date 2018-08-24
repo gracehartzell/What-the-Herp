@@ -3,8 +3,6 @@ const results = [];
 const resultsList = document.getElementsByClassName('cards')[0];
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-// const proxy = `https://cors-anywhere.herokuapp.com/`
-// removed proxy because I started receiving errors when/for using it
 
 
 searchButton.addEventListener('keyup', (ev) => {
