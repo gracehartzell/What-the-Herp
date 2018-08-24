@@ -298,3 +298,11 @@ a {
   height: 44px;
   cursor: pointer;
 }
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border: 1px solid #96B3AD;
+}
