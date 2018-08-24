@@ -1,4 +1,5 @@
 navigator.geolocation.getCurrentPosition(function(location) {
+    const MAPS = 'maps';
     let latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
     let mymap = L.map('mapid').setView(latlng, 13)
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -8,13 +9,29 @@ navigator.geolocation.getCurrentPosition(function(location) {
             accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
         }).addTo(mymap);
     
-    let marker = L.marker(latlng).addTo(mymap);
-    
-    mymap.on('click', locationClick)
-    // let marker2 = L.marker([30.25773273260216, -97.75806427001955]).addTo(mymap);
+    L.marker(latlng).addTo(mymap);
+    mymap.on('click', locationClick);
+
+
+    const savedPoints = JSON.parse(localStorage.getItem(MAPS));
+    if(Array.isArray(savedPoints)) {
+      savedPoints.forEach((location) => {
+        L.marker(location).addTo(mymap);
+      });
+    }
+
 
     function locationClick(ev) {
-        console.log(ev.latlng)
-        let newMarker = L.marker(ev.latlng).addTo(mymap);
-    }
+        const location = ev.latlng;
+        const mapsFromLocalstorage = JSON.parse(localStorage.getItem(MAPS));
+
+        let mapsToBeAdded = [];
+        if(Array.isArray(mapsFromLocalstorage)) {
+          mapsToBeAdded = mapsFromLocalstorage;
+        }
+
+        mapsToBeAdded.push(location);
+        localStorage.setItem(MAPS, JSON.stringify(mapsToBeAdded));
+        L.marker(location).addTo(mymap);
+    };
 });
